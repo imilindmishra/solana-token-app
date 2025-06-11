@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Solana Token Toolkit
 
-## Getting Started
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This application covers the vast majority of core interactions required for a modern Solana dApp.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* **Wallet Integration:** Connects to popular Solana wallets like Phantom and Solflare using `@solana/wallet-adapter`.
+* **Balance Display:** Fetches and displays the user's native SOL balance.
+* **Devnet SOL Airdrop:** A one-click button to request test SOL from the faucet on the Devnet.
+* **SPL Token Display:** Fetches and lists all SPL (Solana Program Library) tokens held by the user.
+* **Token Metadata:** Enriches the token list by fetching names, symbols, and logos from the Jupiter Token List API.
+* **SPL Token Transfers:** A complete transfer flow, including:
+    * Finding Associated Token Accounts (ATAs).
+    * Automatically creating the recipient's ATA if it doesn't exist.
+    * Constructing and sending the transfer transaction.
+* **Cryptographic Message Signing:** Allows users to prove wallet ownership by signing a custom message (a gas-less operation).
+* **Signature Verification:** Verifies the authenticity of a signed message using the public key, message, and signature.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Framework:** [Next.js](https://nextjs.org/) (App Router)
+* **Language:** [TypeScript](https://www.typescriptlang.org/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Solana Core Libraries:**
+    * `@solana/web3.js`: For core Solana data structures and RPC communication.
+    * `@solana/spl-token`: For SPL Token instructions and utilities.
+* **Wallet Interaction:**
+    * `@solana/wallet-adapter`: The standard set of libraries for integrating Solana wallets into a React app.
+* **Cryptography Utilities:**
+    * `bs58`: For encoding/decoding data in Base58 format.
+    * `tweetnacl`: For performing high-speed cryptographic signature verification.
+* **Data Source:**
+    * [Jupiter Token List API](https://token.jup.ag/all): For fetching SPL token metadata.
